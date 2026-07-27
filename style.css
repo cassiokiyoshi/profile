@@ -1,0 +1,105 @@
+body {
+  font-family: "Winterthur";
+  background-color: #d5d6d6;
+  color: #194343;
+  text-align: center;
+  padding: 25px;
+}
+
+h1 {
+  font-family: "Trebuchet";
+  color: #301466;
+  font-size: 20px;
+}
+
+h2, h3 {
+  font-family: "Trebuchet";
+  color: #301466;
+}
+
+li {
+  display: inline;
+  margin-inline: 5px;
+}
+
+ul {
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+  color:#5C3D99;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+a:hover {
+  color:#009497;
+}
+
+#profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+#about {
+  position: sticky;
+  top: 20px;
+  align-self: start;
+  background-color: #bdd6cb;
+  border: 1px solid rgba(163, 199, 183, 0.3);
+  box-shadow: 0 0 16px rgb(60, 85, 74, 0.1);
+  padding: 25px;
+  width: 200px;
+  height: 350px;
+  border-radius: 2px;
+}
+.container {
+  display: grid;
+  grid-template-columns: 250px 550px;
+  gap: 60px;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card {
+  background-color: #bdd6cb;
+  padding: 50px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  border-radius: 2px;
+  border: 1px solid rgba(163, 199, 183, 0.3);
+  box-shadow: 0 0 16px rgb(60, 85, 74, 0.1);
+}
+
+.instagram-media {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    width: 100% !important;
+}
+
+@media (max-width: 960px) {
+  .container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .container > * {
+    grid-column: 1;
+    width: min(500px, 100%);
+  }
+
+  #about {
+    grid-column: 1;
+    position: static;
+    justify-self: center;
+  }
+}
