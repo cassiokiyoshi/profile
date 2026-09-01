@@ -1,0 +1,32 @@
+body {
+  background: radial-gradient(circle at 72% 12%, rgba(36, 72, 255, 0.09), transparent 28rem), radial-gradient(circle at 15% 75%, rgba(109, 36, 255, 0.045), transparent 34rem), #080808;
+  isolation: isolate;
+}
+
+body::before,
+body::after {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+}
+
+body::before {
+  background-image: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.9) 0 0.5px, transparent 0.8px), radial-gradient(circle at 70% 65%, rgba(255, 255, 255, 0.65) 0 0.45px, transparent 0.75px), radial-gradient(circle at 45% 80%, rgba(255, 255, 255, 0.7) 0 0.4px, transparent 0.7px);
+  background-position: 0 0, 7px 11px, 13px 5px;
+  background-size: 17px 19px, 23px 29px, 31px 37px;
+  opacity: 0.055;
+}
+
+body::after {
+  background: repeating-linear-gradient(to bottom, transparent 0, transparent 3px, rgba(255, 255, 255, 0.8) 4px);
+  opacity: 0.025;
+}
+
+@media (prefers-contrast: more) {
+  body::before,
+  body::after {
+    display: none;
+  }
+}
