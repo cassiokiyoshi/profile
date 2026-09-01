@@ -321,3 +321,55 @@ canvas.addEventListener("pointerleave", () => {
 });
 
 requestAnimationFrame(animate);
+
+const revealGroups = [
+  ".site-header > *",
+  ".hero-copy",
+  ".hero-visual",
+  ".section-heading",
+  ".project-card",
+  ".about-copy",
+  ".experiment-card",
+  ".contact > *",
+  ".site-footer > *",
+];
+
+const revealElements = [
+  ...document.querySelectorAll(revealGroups.join(",")),
+];
+
+document.documentElement.classList.add("motion-ready");
+
+revealElements.forEach((element, index) => {
+  element.classList.add("glitch-reveal");
+  element.style.setProperty(
+    "--glitch-delay",
+    `${Math.min(index, 5) * 70}ms`,
+  );
+});
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("is-hidden");
+        entry.target.classList.add("is-visible");
+        return;
+      }
+
+      if (entry.target.classList.contains("is-visible")) {
+        entry.target.style.setProperty("--glitch-delay", "0ms");
+        entry.target.classList.remove("is-visible");
+        entry.target.classList.add("is-hidden");
+      }
+    });
+  },
+  {
+    threshold: 0.01,
+    rootMargin: "0px",
+  },
+);
+
+revealElements.forEach((element) => {
+  revealObserver.observe(element);
+});
