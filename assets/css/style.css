@@ -49,6 +49,10 @@ h3 { margin-bottom: .75rem; font-size: 1.75rem; }
 .experiment-card:last-child { border-right: 0; }
 .experiment-card > span { display: block; margin-bottom: 3rem; font-size: 2rem; }
 .experiment-card p { color: var(--muted); }
+.experiment-card-live { position: relative; }
+.experiment-card-live::before { position: absolute; top: 0; right: 0; width: .5rem; height: .5rem; margin: 1rem; border-radius: 50%; background: #54f0ff; box-shadow: 0 0 1rem rgb(84 240 255 / 70%); content: ""; }
+.experiment-tech { margin-bottom: .5rem; font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.experiment-link { display: inline-block; margin-top: 1.5rem; font-weight: 700; text-underline-offset: .25em; }
 .contact { text-align: center; }
 .contact h2 { max-width: none; margin-bottom: 2.5rem; }
 .contact-links { justify-content: center; }

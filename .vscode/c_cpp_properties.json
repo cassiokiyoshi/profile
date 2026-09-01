@@ -1,0 +1,21 @@
+{
+  "env": {
+    "emsdkRoot": "/Users/cassiokiyoshi/code/tools/emsdk"
+  },
+  "configurations": [
+    {
+      "name": "macOS Emscripten",
+      "compilerPath": "${emsdkRoot}/upstream/bin/clang",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "${emsdkRoot}/upstream/emscripten/cache/sysroot/include"
+      ],
+      "defines": [
+        "__EMSCRIPTEN__"
+      ],
+      "cStandard": "c17",
+      "intelliSenseMode": "macos-clang-arm64"
+    }
+  ],
+  "version": 4
+}
