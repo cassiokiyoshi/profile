@@ -90,6 +90,16 @@
 		status = isPaused ? 'Visualization paused.' : 'Visualization resumed.';
 	}
 
+  function stopSearch(): void {
+    if (!abortController) {
+      return;
+    }
+
+    abortController.abort();
+    isPaused = false;
+    status = 'Search stopped.';
+  }
+
 	async function startSearch(): Promise<void> {
 		clearVisualization();
 
@@ -189,7 +199,6 @@
       }
     }
   }
-
 
   async function animatePath(
     positions: Position[],
@@ -318,6 +327,7 @@
 				onClearPath={clearPath}
 				onClearWalls={clearWalls}
 				onReset={resetGrid}
+        onStop={stopSearch}
 			/>
 
       <Stats {algorithm} {stats} />

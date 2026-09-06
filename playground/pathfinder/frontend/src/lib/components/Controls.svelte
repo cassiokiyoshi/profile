@@ -14,6 +14,7 @@
 		onClearPath: () => void;
 		onClearWalls: () => void;
 		onReset: () => void;
+    onStop: () => void;
 	};
 
 	let {
@@ -28,7 +29,8 @@
 		onPauseToggle,
 		onClearPath,
 		onClearWalls,
-		onReset
+		onReset,
+    onStop
 	}: ControlsProps = $props();
 
 	function handleAlgorithmChange(event: Event): void {
@@ -91,6 +93,14 @@
 		>
 			{isPaused ? 'Resume' : 'Pause'}
 		</button>
+
+    <button
+      type="button"
+      disabled={!isRunning}
+      onclick={onStop}
+    >
+      Stop
+    </button>
 
 		<button
 			type="button"
