@@ -35,7 +35,10 @@ h3 { margin-bottom: .75rem; font-size: 1.75rem; }
 .section-heading, .about { display: grid; grid-template-columns: .65fr 1.35fr; gap: 2rem; }
 .section-heading { margin-bottom: 4rem; }
 .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-.project-card { min-height: 28rem; padding: clamp(1.5rem, 4vw, 3rem); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.project-card { position: relative; min-height: 28rem; padding: clamp(1.5rem, 4vw, 3rem); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.project-link::after { position: absolute; inset: 0; content: ""; }
+.project-card:hover { background: #121212; }
+.project-link:focus-visible::after { outline: 2px solid var(--foreground); outline-offset: -2px; }
 .project-card > p:not(.project-number, .project-status) { max-width: 35rem; color: var(--muted); }
 .project-tagline { color: var(--foreground) !important; font-size: 1.2rem; }
 .tag-list { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; list-style: none; }
