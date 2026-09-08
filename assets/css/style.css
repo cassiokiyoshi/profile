@@ -9,7 +9,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--background); color: var(--foreground); font-family: Arial, Helvetica, sans-serif; line-height: 1.5; }
-a { color: inherit; }
+a { color: inherit; text-decoration: none; }
 
 .skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 10; padding: .75rem 1rem; background: var(--foreground); color: var(--background); transform: translateY(-200%); }
 .skip-link:focus { transform: translateY(0); }
@@ -18,7 +18,6 @@ a { color: inherit; }
 .site-header { min-height: 5rem; border-bottom: 1px solid var(--line); }
 .wordmark { font-size: 1.1rem; font-weight: 800; text-decoration: none; }
 nav, .contact-links { display: flex; flex-wrap: wrap; gap: 1.5rem; }
-nav a, .contact-links a, .site-footer a, .text-link { text-underline-offset: .25em; }
 
 .section { padding-block: clamp(4.5rem, 10vw, 9rem); border-bottom: 1px solid var(--line); }
 .hero { display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: clamp(3rem, 8vw, 8rem); min-height: calc(100vh - 5rem); }
@@ -52,7 +51,7 @@ h3 { margin-bottom: .75rem; font-size: 1.75rem; }
 .experiment-card-live { position: relative; }
 .experiment-card-live::before { position: absolute; top: 0; right: 0; width: .5rem; height: .5rem; margin: 1rem; border-radius: 50%; background: #54f0ff; box-shadow: 0 0 1rem rgb(84 240 255 / 70%); content: ""; }
 .experiment-tech { margin-bottom: .5rem; font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-.experiment-link { display: inline-block; margin-top: 1.5rem; font-weight: 700; text-underline-offset: .25em; }
+.experiment-link { display: inline-block; margin-top: 1.5rem; font-weight: 700; }
 .contact { text-align: center; }
 .contact h2 { max-width: none; margin-bottom: 2.5rem; }
 .contact-links { justify-content: center; }
