@@ -1,42 +1,25 @@
-# sv
+# Pathfinder frontend
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Svelte 5, SvelteKit, and TypeScript interface for the Pathfinder Go API.
 
-## Creating a project
+See the [project README](../README.md) for requirements, API details, controls, and full setup.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Development
 
-```sh
-# create a new project
-npx sv create my-app
-```
-
-To recreate this project with the same configuration:
+Start the Go API in a separate terminal with `cd ../api && go run ./cmd/server`, then run from this directory:
 
 ```sh
-# recreate this project
-npx sv@0.17.0 create --template minimal --types ts --install npm frontend
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+npm ci
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+Open the URL printed by Vite. Requests to `/api` are proxied to http://localhost:8080 during development.
 
-To create a production version of your app:
+## Validate and build
 
 ```sh
+npm run check
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+`npm run preview` previews the production frontend build. Production requires a suitable SvelteKit adapter and same-origin routing to the Go API; see the project README.
